@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setWeatherData(data.list))
+      .then((data) => setWeatherData(...data.list))
       .catch((error) => console.error("ERROR!!!", error))
       .finally(() => console.log("Request done"));
   }, []);
