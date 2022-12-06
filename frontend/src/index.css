@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+padding: 0 auto;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: #242424;
+
+}
+*{
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+*::-webkit-scrollbar {
+  display: none;
+}
