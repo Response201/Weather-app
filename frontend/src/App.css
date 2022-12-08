@@ -16,4 +16,32 @@
 
 
 
+/* weather list */
+.DisplayweatherList___container{
+width: 60vw;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 5px;
 
+
+}
+
+.DisplayweatherList___content{
+width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+background-color: rgb(23, 25, 25);
+
+}
+
+
+
+.DisplayweatherList___image{
+
+height: 50px;
+width: 50px;
+
+
+}
