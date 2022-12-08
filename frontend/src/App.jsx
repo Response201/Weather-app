@@ -44,7 +44,7 @@ function App() {
   return (
     <article className="App">
      
-
+<section className="App___content"> 
       <section className="searchCity___container">
       <h1>Weather-app</h1>
         <SearchCity city={city} setCity={setCity} responseData={responseData} />
@@ -64,6 +64,7 @@ function App() {
             .map((item) => (
               <DisplayweatherList item={item} key={item.dt_txt} />
             ))}
+      </section>
       </section>
     </article>
   );

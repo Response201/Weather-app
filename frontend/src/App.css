@@ -3,6 +3,15 @@
   height: 100vh;
   min-height: 500px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App___content {
+  max-width: 1000px;
+  height: 100%;
+  width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -10,7 +19,9 @@
   align-items: center;
   overflow-x: hidden;
   color: white;
+
 }
+
 /* search city input */
 .searchCity___container {
   height: 18%;
@@ -23,25 +34,25 @@
 /* weather today */
 
 .DisplayToday___container {
-  height: 30%;
+  height: 32%;
   width: 98%;
   aspect-ratio: 4/3;
 }
 
 .DisplayToday___content {
+  background-color: rgb(146, 149, 149);
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  background-color: rgb(146, 149, 149);
-  font-size: clamp(15px, 4vw, 20px);
+  font-size: clamp(15px, 50%, 25px);
 }
 
 .DisplayToday___image {
-  height: clamp(80px, 4vw, 150px);
-  width: clamp(80px, 4vw, 150px);
+  max-width: clamp(25px, 50%, 60px);
+  max-height: clamp(25px, 50%, 60px);
 }
 
 /* weather list */
@@ -75,8 +86,9 @@
   /* weather today */
 
   .DisplayToday___container {
-    height: 30%;
-    width: unset;
+    height: 45%;
+    width: 35%;
+    max-height: 250px;
   }
 
   /* weather list */
@@ -85,8 +97,4 @@
   }
 }
 @media (min-width: 1024px) {
-  /* weather list */
-  .DisplayweatherList___container {
-    width: 60%;
-  }
 }
