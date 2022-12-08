@@ -48,7 +48,9 @@ function App() {
       <section className="searchCity___container">
       <h1>Weather-app</h1>
         <SearchCity city={city} setCity={setCity} responseData={responseData} />
+        <div className="searchCity___errorMsg">
         {errorMsg && <p>{errorMsg}</p>}
+        </div>
       </section>
 
       <section>
