@@ -64,7 +64,7 @@
 
 /* weather list */
 .DisplayweatherList___container {
-  height: 30%;
+  height: 35%;
   width: 98%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -90,8 +90,8 @@
 }
 
 .DisplayweatherList___image {
-  height: 25%;
-  width: 25%;
+  height: 30%;
+  width: 20%;
   min-width: 25px;
 }
 
