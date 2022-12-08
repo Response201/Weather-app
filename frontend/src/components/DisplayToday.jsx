@@ -7,14 +7,14 @@ export const DisplayToday = ({item}) => {
 
 
   return (
-    <>
-      <div>
-        <p>{item.dt_txt} </p>
+    
+    <section className="DisplayToday___content">
+        <p>{item.dt_txt.slice(0,10)} </p>
 
         <p>{item.weather[0].description} </p>
 
       
-<div style={{heigth:'150px', width:'150px'}}  >
+<div className="DisplayToday___image"  >
 
 <DisplayIcon item={item} />
 
@@ -23,7 +23,7 @@ export const DisplayToday = ({item}) => {
 
 
 
-      </div>
-    </>
+      </section>
+   
   );
 };

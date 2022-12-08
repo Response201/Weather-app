@@ -43,19 +43,20 @@ function App() {
 
   return (
     <article className="App">
-      <h1>Weather-app</h1>
+     
 
-      <section className="App__searchCity_container">
-        <SearchCity city={city} setCity={setCity} />
+      <section className="searchCity___container">
+      <h1>Weather-app</h1>
+        <SearchCity city={city} setCity={setCity} responseData={responseData} />
         {errorMsg && <p>{errorMsg}</p>}
       </section>
 
       <section>
         <h1>{responseData && responseData.city.name}</h1>
       </section>
-
+<section className="DisplayToday___container" > 
       {weatherData && <DisplayToday item={weatherData[0]} />}
-
+      </section>
       <section className="DisplayweatherList___container">
         {weatherData &&
           weatherData

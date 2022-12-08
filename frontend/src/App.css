@@ -1,7 +1,7 @@
 .App {
   width: 100vw;
   height: 100vh;
-  min-height: 800px;
+  min-height: 500px;
   margin: 0 auto;
   text-align: center;
   display: flex;
@@ -9,39 +9,84 @@
   justify-content: flex-start;
   align-items: center;
   overflow-x: hidden;
-
-
   color: white;
 }
-
-
-
-/* weather list */
-.DisplayweatherList___container{
-width: 60vw;
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 5px;
-
-
-}
-
-.DisplayweatherList___content{
-width: 100%;
+/* search city input */
+.searchCity___container {
+  height: 18%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
-background-color: rgb(23, 25, 25);
-
 }
 
+/* weather today */
 
+.DisplayToday___container {
+  height: 30%;
+  width: 98%;
+  aspect-ratio: 4/3;
+}
 
-.DisplayweatherList___image{
+.DisplayToday___content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(146, 149, 149);
+  font-size: clamp(15px, 4vw, 20px);
+}
 
-height: 50px;
-width: 50px;
+.DisplayToday___image {
+  height: clamp(80px, 4vw, 150px);
+  width: clamp(80px, 4vw, 150px);
+}
 
+/* weather list */
+.DisplayweatherList___container {
+  height: 25%;
+  width: 98%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+}
 
+.DisplayweatherList___content {
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  background-color: rgb(146, 149, 149);
+  font-size: clamp(11px, 4vw, 15px);
+}
+
+.DisplayweatherList___image {
+  height: clamp(30px, 4vw, 50px);
+  width: clamp(30px, 4vw, 50px);
+}
+
+@media (min-width: 768px) {
+  /* weather today */
+
+  .DisplayToday___container {
+    height: 30%;
+    width: unset;
+  }
+
+  /* weather list */
+  .DisplayweatherList___container {
+    width: 85%;
+  }
+}
+@media (min-width: 1024px) {
+  /* weather list */
+  .DisplayweatherList___container {
+    width: 60%;
+  }
 }
