@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import { WiSunrise, WiSunset } from "react-icons/wi";
 import { DisplayToday } from "./components/DisplayToday";
 import { DisplayweatherList } from "./components/DisplayWeatherList";
 import Loadning from "./components/Loadning";
 import SearchCity from "./components/SearchCity";
 import * as image from "./components/images";
 function App() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("täby");
   const [errorMsg, setErrorMsg] = useState("");
   const [responseData, setResponseData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
@@ -77,7 +78,7 @@ function App() {
     <article className="App">
       <section className="App___content">
         <section className="searchCity___container">
-          <h1>Weather-app</h1>
+         
           <SearchCity
             city={city}
             setCity={setCity}
@@ -92,35 +93,20 @@ function App() {
 
         {weatherNow && weatherData ? (
           <>
-            <section>
-              <h1>{responseData && responseData.city.name}</h1>
+            <section className="sunset_time___container">
+              <h1>{responseData && responseData.city.name.toUpperCase()}</h1>
               <div
-                style={{
-                  whiteSpace: "nowrap",
-                  display: "flex",
-                  width: "80vw",
-                  maxWidth:'400px',
-                  alignItems: "center",
-                  justifyContent: "space-around"
-                }}
+               className="sunset_time___content"
               >
                 <p>{localTime} </p>
 
                 <p>
                   {sunrise}{" "}
-                  <img
-                    src={image.sunrise}
-                    alt="sunrise"
-                    style={{ width: "15px", height: "14px" }}
-                  />{" "}
+                  <div className="icon_container"> <WiSunrise className="icon_sunrise" /> </div>
                 </p>
                 <p>
                   {sunset}{" "}
-                  <img
-                    src={image.sunset}
-                    alt="sunset"
-                    style={{ width: "15px", height: "14px" }}
-                  />{" "}
+                  <div className="icon_container"> <WiSunset className="icon_sunrise" /> </div>
                 </p>
               </div>
             </section>

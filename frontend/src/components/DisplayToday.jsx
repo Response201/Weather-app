@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import * as image from "./images";
+import { WiCelsius, WiHumidity, WiWindy } from "react-icons/wi";
 import { DisplayIcon } from "./DisplayIcon";
 import { useEffect } from "react";
 
@@ -32,23 +32,23 @@ export const DisplayToday = ({ item, setLocalTime,setSunrise, setSunset }) => {
 
   return (
     <section className="DisplayToday___content">
-      <p>{item.weather[0].description} </p>
+     
+      <section className="DisplayToday___image">
+        <DisplayIcon item={item} />
+      </section>
+     
+      <section  className="DisplayToday___weatherData_container">
+        <p>Feels like: {item.main.feels_like} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
+        <p> Humidity: {item.main.humidity} <div className="icon_container"> <WiHumidity className="icon_humidity" /></div> </p>
+
+        <p> Temp: {item.main.temp} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div>  </p>
+        <p>Max: {item.main.temp_max} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
+        <p>Min: {item.main.temp_min} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
+
+        <p> Wind {item.wind.speed} <div className="icon_container"> <WiWindy className="icon_wind" /></div> </p>
+      </section>
 
      
-      <div>
-        <p>Feels like: {item.main.feels_like} </p>
-        <p> Humidity: {item.main.humidity} </p>
-
-        <p> Temp: {item.main.temp} </p>
-        <p>Max: {item.main.temp_max} </p>
-        <p>Min: {item.main.temp_min} </p>
-
-        <p> Wind {item.wind.speed} </p>
-      </div>
-
-      <div className="DisplayToday___image">
-        <DisplayIcon item={item} />
-      </div>
     </section>
   );
 };

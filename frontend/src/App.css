@@ -5,11 +5,13 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .App___content {
   max-width: 1000px;
+  max-height: 820px;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -23,10 +25,12 @@
 
 /* search city input */
 .searchCity___container {
-  height: 18%;
+  width: 98%;
+  padding: 5% 2% 0% 2%;
+  height: 8%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -34,72 +38,179 @@
   height: 15px;
 }
 
+/* h1 & sunset & sunrise & time container */
+
+h1{
+font-weight: 800;
+font-size: 1.8rem;
+letter-spacing: 0.5rem;
+
+
+}
+
+.sunset_time___container {
+  width: 100%;
+  height: 15%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.sunset_time___content {
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sunset_time___content p {
+  width: 30%;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid snow;
+  background-color: rgba(24, 24, 24, 0.504);
+  border-radius: 50px;
+}
+
 /* weather today */
 
 .DisplayToday___container {
-  height: 35%;
-  width: 98%;
-  aspect-ratio: 4/3;
-  padding: 10px;
+  height: 50%;
+  width: 100%;
 }
 
 .DisplayToday___content {
-  background-color: rgb(146, 149, 149);
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex-direction: column;
-  font-size: 90%;
-}
-.DisplayToday___content p {
-  margin: 0;
+  font-size: 100%;
 }
 
 .DisplayToday___image {
-  max-width: clamp(25px, 50%, 60px);
-  max-height: clamp(25px, 50%, 60px);
+  display: flex;
+  align-items: flex-start;
+
+  height: 70%;
+  aspect-ratio: 4/4;
+}
+
+.DisplayToday___image img {
+  height: 100%;
+  margin-top: -5%;
+}
+
+.DisplayToday___content p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.DisplayToday___weatherData_container {
+  border: 1px solid snow;
+  background-color: rgba(24, 24, 24, 0.831);
+  border-radius: 20px;
+  width: 98%;
+  max-width: 380px;
+  height: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+/* Icon styling */
+.icon_container {
+  height: 15px;
+  width: 15px;
+  position: relative;
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon_sunrise {
+  font-size: 1.4rem;
+  position: absolute;
+  left: 3px;
+  top: -3px;
+}
+.icon_celsius {
+  font-size: 1.8rem;
+  position: absolute;
+  left: -5px;
+  top: -7px;
+}
+
+.icon_humidity {
+  font-size: 1.2rem;
+  position: absolute;
+  left: -0px;
+  top: -3px;
+}
+
+.icon_wind {
+  font-size: 1.4rem;
+  position: absolute;
+  left: 1px;
+  top: -4px;
 }
 
 /* weather list */
 .DisplayweatherList___container {
   width: 98%;
+  height: 15%;
+  max-width: 350px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2%;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
 }
 
 .DisplayweatherList___content {
   width: 100%;
-  margin-top: 10%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  background-color: rgb(146, 149, 149);
-  height: 75%;
+  background-color: rgb(27, 27, 27);
+  border: 1px solid snow;
+  border-radius: 50px;
+  height: 70%;
+  max-height: 120px;
   padding: 10px 0;
 }
+
+.DisplayweatherList___day_p {
+  max-height: 40px;
+  height: 100%;
+}
+
+.DisplayweatherList___PIcon_container {
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 40px;
+  height: 100%;
+}
+
 .DisplayweatherList___content p {
-  font-size: 98%;
-  height: 60%;
+  font-size: 0.75rem;
 }
 
 .DisplayweatherList___image {
-  height: 30%;
+  max-height: 45px;
+  height: 100%;
   width: 20%;
   min-width: 25px;
+  padding-bottom: 5px;
 }
 
 @media (min-width: 768px) {
   /* weather today */
-
-  .DisplayToday___container {
-    height: 45%;
-    width: 35%;
-    max-height: 250px;
-  }
 
   /* weather list */
 }
