@@ -10,6 +10,7 @@ const SearchCity = ({ city, setCity, responseData }) => {
     if (responseData) {
       setTimeout(() => {
         setValue("");
+        setCity("");
       }, 200);
     }
   }, [responseData]);
@@ -29,9 +30,7 @@ const SearchCity = ({ city, setCity, responseData }) => {
         maxLength={20}
       />
 
-      <button
-       onClick={onClickSearch}
-      >
+      <button onClick={onClickSearch}>
         <Lottie_btn_search search={search} setSearch={setSearch} />
       </button>
     </div>

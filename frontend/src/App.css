@@ -70,7 +70,12 @@
 }
 
 .searchCity___errorMsg {
-  height: 15px;
+  height: 30px;
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 /* h1 & sunset & sunrise & time container */

@@ -5,7 +5,8 @@ import { DisplayToday } from "./components/DisplayToday";
 import { DisplayweatherList } from "./components/DisplayWeatherList";
 import Loadning from "./components/Loadning";
 import SearchCity from "./components/SearchCity";
-import * as image from "./components/images";
+import moment from "moment";
+import { DisplaySunAndTime } from "./components/DisplaySunAndTime";
 function App() {
   const [city, setCity] = useState("täby");
   const [errorMsg, setErrorMsg] = useState("");
@@ -19,6 +20,11 @@ function App() {
   const [sunrise, setSunrise] = useState("");
   const [sunset, setSunset] = useState("");
   let url = ``;
+  let date = [];
+
+  for (let i = 1; i <= 4; i++) {
+    date.push(moment().add(i, "days").format("YYYY-MM-DD 12:00:00"));
+  }
 
   useEffect(() => {
     url = `${import.meta.env.VITE_URL}q=${city}&units=metric&APPID=${
@@ -44,8 +50,15 @@ function App() {
             setCityLat(data.city.coord.lat);
             setCityLon(data.city.coord.lon);
             setResponseData(data);
+            /* Take out weather for 4 days forward */
             setWeatherData(
-              data.list.filter((item) => item.dt_txt.includes("12:00:00"))
+              data.list.filter(
+                (item) =>
+                  item.dt_txt.includes(date[0]) ||
+                  item.dt_txt.includes(date[1]) ||
+                  item.dt_txt.includes(date[2]) ||
+                  item.dt_txt.includes(date[3])
+              )
             );
           }
         })
@@ -65,7 +78,6 @@ function App() {
         .then((response) => response.json())
         .then((data) => {
           setloading(false);
-          console.log(data);
           setWeatherNow(data);
         })
         .catch((error) => {
@@ -78,7 +90,6 @@ function App() {
     <article className="App">
       <section className="App___content">
         <section className="searchCity___container">
-         
           <SearchCity
             city={city}
             setCity={setCity}
@@ -93,23 +104,12 @@ function App() {
 
         {weatherNow && weatherData ? (
           <>
-            <section className="sunset_time___container">
-              <h1>{responseData && responseData.city.name.toUpperCase()}</h1>
-              <div
-               className="sunset_time___content"
-              >
-                <p>{localTime} </p>
-
-                <p>
-                  {sunrise}{" "}
-                  <div className="icon_container"> <WiSunrise className="icon_sunrise" /> </div>
-                </p>
-                <p>
-                  {sunset}{" "}
-                  <div className="icon_container"> <WiSunset className="icon_sunrise" /> </div>
-                </p>
-              </div>
-            </section>
+            <DisplaySunAndTime
+              responseData={responseData}
+              sunrise={sunrise}
+              sunset={sunset}
+              localTime={localTime}
+            />
             <section className="DisplayToday___container">
               {weatherNow && (
                 <DisplayToday
@@ -122,11 +122,9 @@ function App() {
             </section>
             <section className="DisplayweatherList___container">
               {weatherData &&
-                weatherData
-                  .slice(1)
-                  .map((item) => (
-                    <DisplayweatherList item={item} key={item.dt_txt} />
-                  ))}
+                weatherData.map((item) => (
+                  <DisplayweatherList item={item} key={item.dt_txt} />
+                ))}
             </section>
           </>
         ) : (
