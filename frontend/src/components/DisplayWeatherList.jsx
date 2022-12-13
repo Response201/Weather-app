@@ -10,11 +10,16 @@ export const DisplayweatherList = ({ item }) => {
 
   return (
     <section className="DisplayweatherList___content">
-      <section className="DisplayweatherList___day_p"> 
-      <p>{day}</p>
+      <section className="DisplayweatherList___day_p">
+        <p>{day}</p>
       </section>
-     <section className="DisplayweatherList___PIcon_container"> 
-      <p>{item.main.temp} </p> <div className="icon_container"> <WiCelsius className="icon_celsius" /></div></section>
+      <section className="DisplayweatherList___PIcon_container">
+        <p>{Math.floor(item.main.temp)} </p>{" "}
+        <div className="icon_container">
+          {" "}
+          <WiCelsius className="icon_celsius" />
+        </div>
+      </section>
       <section className="DisplayweatherList___image">
         <DisplayIcon item={item} />
       </section>

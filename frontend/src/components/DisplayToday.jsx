@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
-import { WiCelsius, WiHumidity, WiWindy } from "react-icons/wi";
+import { WiCelsius, WiHumidity, WiWindy, WiThermometer } from "react-icons/wi";
+import { FiUser, FiChevronsUp, FiChevronsDown, FiWind } from "react-icons/fi";
 import { DisplayIcon } from "./DisplayIcon";
 import { useEffect } from "react";
 
@@ -38,14 +39,68 @@ export const DisplayToday = ({ item, setLocalTime,setSunrise, setSunset }) => {
       </section>
      
       <section  className="DisplayToday___weatherData_container">
-        <p>Feels like: {item.main.feels_like} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
-        <p> Humidity: {item.main.humidity} <div className="icon_container"> <WiHumidity className="icon_humidity" /></div> </p>
+        
 
-        <p> Temp: {item.main.temp} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div>  </p>
-        <p>Max: {item.main.temp_max} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
-        <p>Min: {item.main.temp_min} <div className="icon_container"> <WiCelsius className="icon_celsius" /></div> </p>
 
-        <p> Wind {item.wind.speed} <div className="icon_container"> <WiWindy className="icon_wind" /></div> </p>
+
+<div className="DisplayToday___weatherData_content">
+
+<div className="weatherData_content">
+<i><FiUser /></i>
+</div>
+<div className="weatherData_content"><div className="weatherData_content___div"> <p>{Math.floor(item.main.feels_like)}  </p> <i > <WiCelsius /> </i> </div>
+</div><div className="weatherData_content"><p >Feels like</p></div>
+</div>
+
+<div className="DisplayToday___weatherData_content">
+<div className="weatherData_content">
+<i> <WiHumidity /> </i> </div>
+<div className="weatherData_content"> <p>{Math.floor(item.main.humidity)}  % </p>
+</div><div className="weatherData_content"><p >Humidity</p></div>
+</div>
+
+
+       
+<div className="DisplayToday___weatherData_content">
+
+<div className="weatherData_content">
+<i><WiThermometer /></i>
+</div>
+<div className="weatherData_content"> <div className="weatherData_content___div"><p>{Math.floor(item.main.temp)}   </p> <i > <WiCelsius /> </i> </div></div>
+<div className="weatherData_content"><p >Temp</p></div>
+</div>
+
+
+
+<div className="DisplayToday___weatherData_content">
+
+<div className="weatherData_content">
+<i><FiChevronsUp /></i>
+</div>
+<div className="weatherData_content"> <div className="weatherData_content___div"><p>{Math.floor(item.main.temp_max)}</p> <i > <WiCelsius /> </i></div>
+</div>
+<div className="weatherData_content"><p> Max </p></div>
+</div>
+
+<div className="DisplayToday___weatherData_content">
+<div className="weatherData_content">
+<i><FiChevronsDown /></i></div>
+<div className="weatherData_content"> <div className="weatherData_content___div"><p> {Math.floor(item.main.temp_min)}   </p> <i > <WiCelsius /> </i> </div>
+</div><div className="weatherData_content"><p>Min</p></div>
+</div>
+
+<div className="DisplayToday___weatherData_content">
+
+<div className="weatherData_content">
+<i><FiWind /></i>
+</div>
+<div className="weatherData_content"><p> {Math.floor(item.wind.speed)}  m/s </p>
+</div><div className="weatherData_content"><p >Wind</p></div>
+</div>
+
+
+        
+
       </section>
 
      
