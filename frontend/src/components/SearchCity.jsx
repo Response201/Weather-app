@@ -11,6 +11,7 @@ const SearchCity = ({ city, setCity, responseData }) => {
       setTimeout(() => {
         setValue("");
         setCity("");
+       
       }, 200);
     }
   }, [responseData]);

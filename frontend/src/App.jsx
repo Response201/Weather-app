@@ -79,6 +79,8 @@ function App() {
         .then((data) => {
           setloading(false);
           setWeatherNow(data);
+          setCityLat('')
+          setCityLon('')
         })
         .catch((error) => {
           setloading(false);
