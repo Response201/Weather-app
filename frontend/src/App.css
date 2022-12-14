@@ -20,7 +20,7 @@
   justify-content: flex-start;
   align-items: center;
   overflow-x: hidden;
-  color: white;
+  color: rgb(255,255,255);
 }
 
 /* search city input */
@@ -101,28 +101,37 @@ h1 {
   justify-content: space-around;
   align-items: center;
 }
+
+
+
+
 .sunset_time___content p {
   width: 30%;
   height: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(24, 24, 24, 0.504);
+  background-color: rgb(27,29,46);
   border-radius: 50px;
 }
+
+
+
 
 /* weather today */
 
 .DisplayToday___container {
-  height: 50%;
+  height: 55%;
   width: 100%;
-  margin-bottom: 5%;
+ 
+  
 }
 
 .DisplayToday___content {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   flex-direction: column;
   font-size: 100%;
 }
@@ -130,14 +139,14 @@ h1 {
 .DisplayToday___image {
   display: flex;
   align-items: flex-start;
-
-  height: 65%;
+margin-bottom: 1.5%;
+  height: 60%;
   aspect-ratio: 4/4;
 }
 
 .DisplayToday___image img {
-  height: 100%;
-  margin-top: 1%;
+  height: 94%;
+  margin: 1% 0;
 }
 
 .DisplayToday___content p {
@@ -147,18 +156,18 @@ h1 {
 }
 
 .DisplayToday___weatherData_container {
-  background-color: rgba(24, 24, 24, 0.831);
+  background-color: rgb(27,29,46);
   border-radius: 20px;
   width: 96%;
   max-width: 350px;
-  height: 40%;
+  height: 35%;
   display: grid;
   grid-template-columns: repeat(3, 33%);
   grid-template-rows: 45% 45%;
   gap: 2px;
   padding: 1%;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .DisplayToday___weatherData_content {
@@ -227,19 +236,9 @@ h1 {
   top: -7px;
 }
 
-.icon_humidity {
-  font-size: 1.2rem;
-  position: absolute;
-  left: -0px;
-  top: -3px;
-}
 
-.icon_wind {
-  font-size: 1.4rem;
-  position: absolute;
-  left: 1px;
-  top: -4px;
-}
+
+
 
 /* weather list */
 .DisplayweatherList___container {
@@ -261,12 +260,23 @@ h1 {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  background-color: rgb(27, 27, 27);
+  background-color: rgb(27,29,46);
   border-radius: 50px;
   height: 75%;
   max-height: 90px;
   padding: 18% 0;
 }
+
+
+.DisplayweatherList___content:hover{
+
+  background-color: rgb(77, 82, 130);;
+  
+  }
+
+
+
+
 
 .DisplayweatherList___day_p {
   max-height: 40px;
@@ -297,7 +307,7 @@ h1 {
 @media (min-width: 768px) {
   /* weather list */
   .DisplayweatherList___container {
-    margin-top: 0%;
+    margin-top: 2%;
   }
 }
 @media (min-width: 1024px) {
